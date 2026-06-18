@@ -1,0 +1,38 @@
+# Build
+build/
+out/
+cmake-build-*/
+
+# Compiled output
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# CMake generated
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.dSYM/
+
+# Neovim
+*.swp
+*.swo
+.nvim/
+
+# Clangd
+.cache/
+
+# Env / IDE
+.env
+.vscode/
+.idea/
