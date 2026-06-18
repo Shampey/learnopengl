@@ -1,5 +1,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 
 #include <iostream>
 
@@ -23,9 +24,13 @@ const char *fragmentShaderSource = "#version 330 core\n"
     "out vec4 FragColor;\n"
     "void main()\n"
     "{\n"
-    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+    "   FragColor = vec4(0.5f, 0.3f, 0.1f, 1.0f);\n"
     "}\0"; 
 
+const unsigned int SCR_WIDTH = 1200;
+const unsigned int SCR_HEIGHT = 800;
+
+const glm::vec4 BG_COLOR(0.2f, 0.3f, 0.3f, 1.0f);
 
 int main() {
     std::cout << "hello world\n" << std::endl;
@@ -39,7 +44,7 @@ int main() {
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-    GLFWwindow *window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -117,7 +122,7 @@ int main() {
         process_input(window);
 
         /* RENDERING */
-        glClearColor(0.1f, 0.4f, 0.5f, 0.5f);
+        glClearColor(BG_COLOR.r, BG_COLOR.g, BG_COLOR.b, BG_COLOR.a);
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(shaderProgram);
