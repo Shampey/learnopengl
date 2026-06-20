@@ -16,6 +16,8 @@ add_executable(LearnOpenGL src/main.cpp)
 
 target_include_directories(LearnOpenGL PRIVATE external/glad/include)
 
+target_compile_definitions(LearnOpenGL PRIVATE SHADER_DIR="${CMAKE_SOURCE_DIR}/src/shaders/")
+
 target_link_libraries(LearnOpenGL
     glad
     glfw
