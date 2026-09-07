@@ -83,6 +83,7 @@ int main() {
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
+        /* Swap buffers and handle events */
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
