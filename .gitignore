@@ -34,8 +34,13 @@ compile_commands.json
 
 # Env / IDE
 .env
-.vscode/
 .idea/
+
+# Share the cross-platform VSCode setup, but ignore per-user VSCode files
+.vscode/*
+!.vscode/tasks.json
+!.vscode/settings.json
+!.vscode/c_cpp_properties.json
 
 
 *.pdb

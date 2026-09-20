@@ -1,0 +1,46 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "windows-x64",
+            "displayName": "Windows x64",
+            "description": "Windows build pinned to x64 (the bundled GLFW is external/glfw/lib/win64/glfw3.lib)",
+            "generator": "Visual Studio 18 2026",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "macos-native",
+            "displayName": "macOS native",
+            "description": "macOS build; architecture is auto-detected (arm64 or x86_64)",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Darwin"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "windows-x64",
+            "configurePreset": "windows-x64"
+        },
+        {
+            "name": "macos-native",
+            "configurePreset": "macos-native"
+        }
+    ]
+}

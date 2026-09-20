@@ -1,0 +1,45 @@
+{
+    "configurations": [
+        {
+            "name": "Win64 (MSVC)",
+            "includePath": [
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/external/glad/include",
+                "${workspaceFolder}/external/glfw/include",
+                "${workspaceFolder}/external/glm/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        },
+        {
+            "name": "Mac (Apple Clang)",
+            "includePath": [
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/external/glad/include",
+                "${workspaceFolder}/external/glfw/include",
+                "${workspaceFolder}/external/glm/include"
+            ],
+            "defines": [
+                "GLFW_INCLUDE_NONE"
+            ],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

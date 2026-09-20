@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cmake",
+            "label": "CMake: Configure",
+            "command": "configure",
+            "detail": "Configure the project with the active CMake Tools kit (works on Windows and macOS)"
+        },
+        {
+            "type": "cmake",
+            "label": "CMake: Build",
+            "command": "build",
+            "dependsOn": [
+                "CMake: Configure"
+            ],
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build all targets (LearnOpenGL + glad)"
+        }
+    ]
+}
